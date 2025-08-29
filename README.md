@@ -14,5 +14,6 @@ Clique no link abaixo para acessar meu portfólio:
 [👉 https://calebe-rocha.github.io/Portifolio_2025_08/](https://calebe-rocha.github.io/Portifolio_2025_08/)
 
 ---
-**NOTA:** Antigo Portifolio foi excluido, então não o escontrará online.
+**NOTA:** 
+Esse é o novo Portifolio atualizado para Agosto então, O Antigo Portifolio foi excluido, então não o escontrará online.
 ---
