@@ -1,6 +1,6 @@
 # 📜 Portfólio Profissional
 
-Bem-vindo ao meu portfólio profissional Atualizado para Agosto, onde apresento meus projetos, habilidades e experiência como desenvolvedor.
+Bem-vindo ao meu portfólio profissional Atualizado, onde apresento meus projetos, habilidades e experiência como desenvolvedor.
 
 ![Portfolio](https://img.shields.io/badge/Status-Online-brightgreen)
 ![GitHub last commit](https://img.shields.io/github/last-commit/calebe-rocha/Portifolio_2025_08)
@@ -15,5 +15,5 @@ Clique no link abaixo para acessar meu portfólio:
 
 ---
 **NOTA:** 
-Esse é o novo Portifolio atualizado para Agosto então, O Antigo Portifolio foi excluido, então não o escontrará online.
+Esse é o novo Portifolio atualizado então, O Antigo Portifolio foi excluido, então não o escontrará online.
 ---
