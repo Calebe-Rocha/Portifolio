@@ -2,6 +2,7 @@
 
 Bem-vindo ao meu portfólio profissional Atualizado, onde apresento meus projetos, habilidades e experiência como desenvolvedor.
 
+
 ![Portfolio](https://img.shields.io/badge/Status-Online-brightgreen)
 ![GitHub last commit](https://img.shields.io/github/last-commit/calebe-rocha/Portifolio)
 ![GitHub](https://img.shields.io/github/license/calebe-rocha/Portifolio)
