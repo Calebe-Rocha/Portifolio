@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calebe - Desenvolvedor de Jogos & Programador</title>
+    <title>Site do Calebe</title>
     <meta name="description" content="Portfólio de Calebe - Desenvolvedor de jogos, programador e artista digital. Criação de experiências com IA e design interativo.">
     <meta name="keywords" content="Calebe, Dev, IA, jogos, programador, artista digital, portfólio, desenvolvimento web">
     <meta name="author" content="Calebe Andrade">
-    <link rel="icon" href="/images/logo.png" type="image/png">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Monospace font for hacker vibe -->
+
     <style>
         * {
             margin: 0;
@@ -15,12 +21,20 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --accent: #ffffff; /* switched accent to white per request */
+            --accent-2: #dddddd;
+            --accent-rgb: 255,255,255;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
             line-height: 1.6;
-            color: #fff;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #9fffb0; /* soft neon green */
+            background: #040506; /* solid near-black */
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -49,12 +63,31 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff9800, #f44336);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #9fffb0;
+        }
+
+        /* Logo image in header */
+        .logo img.logo-img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Make any direct <img> using logo.png rounded (covers other occurrences) */
+        img[src$="logo.png"],
+        .logo img.logo-img {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        /* Make sure logo container keeps alignment */
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
         .nav-links {
@@ -72,7 +105,7 @@
         }
 
         .nav-links a:hover {
-            color: #ff9800;
+            color: var(--accent);
             transform: translateY(-2px);
         }
 
@@ -83,7 +116,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #ff9800;
+            background: var(--accent);
             transition: width 0.3s ease;
         }
 
@@ -93,20 +126,17 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #040506;
         }
 
         .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            display: none; /* hide decorative particles for minimal layout */
         }
 
         .particle {
@@ -152,30 +182,26 @@
         }
 
         .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            animation: slideInUp 1s ease;
-            background: linear-gradient(45deg, #fff, #ff9800);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 3.2rem;
+            margin-bottom: 0.4rem;
+            color: #33ff77;
+            letter-spacing: 0.6px;
         }
 
         .hero .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
             opacity: 0.9;
-            animation: slideInUp 1s ease 0.2s both;
-            color: #f0f0f0;
+            color: #8affb3;
         }
 
         .hero .description {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            max-width: 700px;
+            font-size: 1rem;
+            margin-bottom: 1.6rem;
+            max-width: 680px;
             opacity: 0.85;
-            animation: slideInUp 1s ease 0.4s both;
-            line-height: 1.8;
+            line-height: 1.6;
+            color: #bfffd0;
         }
 
         @keyframes slideInUp {
@@ -198,38 +224,34 @@
         }
 
         .btn {
-            padding: 15px 35px;
+            padding: 10px 16px;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.4s ease;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.18s ease;
             position: relative;
             overflow: hidden;
-            border: none;
+            border: 1px solid rgba(51,255,119,0.12);
             cursor: pointer;
+            background: transparent;
+            color: #9fffb0;
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #ff9800, #f44336);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+            border-color: rgba(51,255,119,0.3);
+            color: #33ff77;
         }
 
         .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            border-color: rgba(255,255,255,0.06);
+            color: #bfffd0;
+            opacity: 0.9;
         }
 
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 15px 35px rgba(255, 152, 0, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.6);
         }
 
         /* Sections */
@@ -239,11 +261,11 @@
         }
 
         .section-dark {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: #030305;
         }
 
         .section-light {
-            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            background: #040607;
         }
 
         .section-title {
@@ -262,7 +284,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(45deg, #ff9800, #f44336);
+            background: linear-gradient(45deg, var(--accent), var(--accent-2));
             border-radius: 2px;
         }
 
@@ -284,32 +306,32 @@
         }
 
         .profile-pic {
-            width: 300px;
-            height: 300px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            border: 5px solid #ff9800;
+            border: 4px solid var(--accent);
             object-fit: cover;
-            transition: all 0.4s ease;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         .profile-emoji {
-            width: 300px;
-            height: 300px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            border: 5px solid #ff9800;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: 4px solid var(--accent);
+            background: linear-gradient(135deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 6rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            font-size: 3.6rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         .profile-pic:hover, .profile-emoji:hover {
-            transform: scale(1.05) rotate(5deg);
-            box-shadow: 0 25px 50px rgba(255, 152, 0, 0.4);
+            transform: scale(1.03);
+            box-shadow: 0 20px 50px rgba(0,188,212,0.12);
         }
 
         .about-text {
@@ -318,9 +340,9 @@
         }
 
         .about-text h3 {
-            color: #ff9800;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            color: #33ff77;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         .about-text p {
@@ -336,15 +358,13 @@
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.02);
+            padding: 1.4rem;
+            border-radius: 10px;
+            text-align: left;
+            transition: all 0.18s ease;
+            border: 1px solid rgba(51,255,119,0.06);
             position: relative;
-            overflow: hidden;
         }
 
         .skill-card::before {
@@ -354,7 +374,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 152, 0, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.08), transparent);
             transition: left 0.6s;
         }
 
@@ -363,28 +383,29 @@
         }
 
         .skill-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 152, 0, 0.5);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(0,188,212,0.28);
         }
 
         .skill-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(45deg, #ff9800, #f44336);
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(45deg, var(--accent), var(--accent-2));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
+            font-size: 1.4rem;
+            box-shadow: 0 8px 18px rgba(0,188,212,0.12);
+            color: #001916;
         }
 
         .skill-card h3 {
-            margin-bottom: 1.5rem;
-            color: #ff9800;
-            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+            font-size: 1.2rem;
         }
 
         .skill-card p {
@@ -400,12 +421,11 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
             overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.18s ease;
+            border: 1px solid rgba(51,255,119,0.06);
             position: relative;
         }
 
@@ -416,7 +436,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 152, 0, 0.1));
+            /* use accent color (via RGB var) so theme changes apply consistently */
+            background: linear-gradient(45deg, transparent, rgba(var(--accent-rgb), 0.06));
             opacity: 0;
             transition: opacity 0.4s;
         }
@@ -426,31 +447,81 @@
         }
 
         .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            border-color: rgba(255, 152, 0, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+            border-color: rgba(0,188,212,0.28);
         }
 
         .project-image {
-            height: 220px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            height: 140px;
+            background: linear-gradient(180deg, rgba(51,255,119,0.06), rgba(0,0,0,0.0));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: white;
+            font-size: 2.2rem;
+            color: #9fffb0;
             position: relative;
             overflow: hidden;
         }
 
         .project-content {
-            padding: 2rem;
+            padding: 1.2rem 1.4rem;
             position: relative;
             z-index: 2;
         }
 
+        /* Ensure project links and text-buttons have padding and look consistent */
+        .project-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(0,188,212,0.08);
+            display: inline-block;
+        }
+
+        .project-links a:hover {
+            background: rgba(0,188,212,0.08);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Contact icons style */
+        .contact-icon i {
+            font-size: 2.2rem;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .contact-item .contact-value {
+            word-break: break-all;
+        }
+
+        /* Certificate gallery */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .cert-card {
+            background: rgba(255,255,255,0.04);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+
+        .cert-card img { max-width: 100%; height: auto; border-radius: 8px; }
+
         .project-content h3 {
-            color: #ff9800;
+            color: var(--accent);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
@@ -469,18 +540,18 @@
         }
 
         .tech-tag {
-            background: rgba(255, 152, 0, 0.2);
-            color: #ff9800;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            background: rgba(var(--accent-rgb), 0.08);
+            color: var(--accent);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 500;
-            border: 1px solid rgba(255, 152, 0, 0.3);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(var(--accent-rgb), 0.12);
+            transition: all 0.18s ease;
         }
 
         .tech-tag:hover {
-            background: rgba(255, 152, 0, 0.3);
+            background: rgba(var(--accent-rgb), 0.12);
             transform: translateY(-2px);
         }
 
@@ -491,10 +562,10 @@
         }
 
         .project-links a {
-            color: #ff9800;
+            color: var(--accent);
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             position: relative;
         }
 
@@ -505,7 +576,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #ff9800;
+            background: var(--accent);
             transition: width 0.3s ease;
         }
 
@@ -514,7 +585,7 @@
         }
 
         .project-links a:hover {
-            color: #f44336;
+            color: var(--accent-2);
             transform: translateY(-2px);
         }
 
@@ -540,31 +611,30 @@
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.18s ease;
+            border: 1px solid rgba(255,255,255,0.02);
             text-decoration: none;
             color: inherit;
         }
 
         .contact-item:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 152, 0, 0.5);
+            transform: translateY(-4px);
+            border-color: rgba(51,255,119,0.12);
         }
 
         .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
             display: block;
+            color: var(--accent);
         }
 
         .contact-label {
             font-weight: bold;
-            color: #ff9800;
+            color: var(--accent);
             margin-bottom: 0.5rem;
             display: block;
         }
@@ -641,28 +711,37 @@
 
         /* Footer */
         footer {
-            background: #1a1a2e;
+            background: transparent;
             text-align: center;
-            padding: 3rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.2rem 0;
+            border-top: 1px solid rgba(255,255,255,0.02);
         }
 
         .footer-content {
-            font-size: 1.1rem;
-            opacity: 0.8;
+            font-size: 0.95rem;
+            opacity: 0.6;
+            color: #9fffb0;
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Calebe</div>
+            <div class="logo">
+                <!-- Substitua a imagem em images/logo.png pela sua logo personalizada -->
+                <a href="#home"><img src="images/logo.png" alt="Logo" class="logo-img"></a>
+            </div>
+            <div style="margin-left:12px; display:flex; gap:8px; align-items:center;">
+                <button id="lang-pt" style="background:transparent; border:none; color:var(--accent); cursor:pointer; font-weight:600;">PT</button>
+                <span style="color:rgba(255,255,255,0.18);">|</span>
+                <button id="lang-en" style="background:transparent; border:none; color:rgba(255,255,255,0.6); cursor:pointer;">EN</button>
+            </div>
             <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a id="nav-home" href="#home">Início</a></li>
+                <li><a id="nav-about" href="#about">Sobre</a></li>
+                <li><a id="nav-skills" href="#skills">Habilidades</a></li>
+                <li><a id="nav-projects" href="#projects">Projetos</a></li>
+                <li><a id="nav-contact" href="#contact">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -675,85 +754,98 @@
         </div>
         
         <div class="hero-content">
-            <h1>Calebe</h1>
-            <p class="subtitle">Programador & Artista Digital</p>
-            <p class="description">
-                Transformo ideias em realidade através do código e da arte. 
-                Especializado em desenvolvimento de jogos, inteligência artificial, 
-                reconhecimento facial e criação de experiências digitais únicas.
+            <h1 id="hero-title">Calebe Andrade</h1>
+            <p id="hero-subtitle" class="subtitle">Bug Bounty Hunter · Desenvolvedor</p>
+            <p id="hero-desc" class="description">
+                Encontro vulnerabilidades, construo protótipos e automatizo soluções. Ofereço serviços
+                de bug bounty, pentest e desenvolvimento de ferramentas em Python e integrações.
             </p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-                <a href="#contact" class="btn btn-secondary">Entre em contato</a>
+                <a id="btn-projects" href="#projects" class="btn btn-primary">Ver Projetos</a>
+                <a id="btn-contact" href="#contact" class="btn btn-secondary">Entre em contato</a>
             </div>
         </div>
     </section>
 
     <section id="about" class="section-dark">
         <div class="container">
-            <h2 class="section-title fade-in">Sobre Mim</h2>
+            <h2 id="title-about" class="section-title fade-in">Sobre Mim</h2>
             <div class="about-content fade-in">
                 <div class="about-image">
                     <div class="profile-container">
-                        <img src="images/logo.png" alt="Calebe" class="profile-pic">
+                        <!-- Usando logo.png como placeholder de foto até a imagem real estar disponível -->
+                        <img src="images/logo.png" alt="Foto de Calebe Andrade (placeholder)" class="profile-pic">
                     </div>
                 </div>
-                <div class="about-text">
-                    <h3>Paixão por Tecnologia e Arte</h3>
+                <div id="about-text" class="about-text">
+                    <h3>Quem sou eu e o que faço</h3>
                     <p>
-                        Sou apaixonado por unir tecnologia e arte. Desenvolvo soluções criativas,
-                        combinando lógica e estética para transformar ideias em experiências interativas.
+                        Olá — eu sou Calebe Andrade. Trabalho com desenvolvimento de software e segurança
+                        ofensiva. Além de desenvolvimento de jogos e automações, atuo como bug bounty hunter
+                        realizando testes de intrusão, caça a vulnerabilidades e criação de ferramentas de apoio.
                     </p>
+
+                    <h3>Área e experiência</h3>
                     <p>
-                        Minha jornada combina o mundo técnico da programação com a criatividade das 
-                        artes digitais. Acredito que essa união única me permite criar soluções 
-                        inovadoras e visualmente impressionantes.
+                        Minha atuação está na interseção entre desenvolvimento de jogos (Unity/C#),
+                        automação (N8N) e scripts/serviços em Python. Programo há aproximadamente 4 anos
+                        (ajuste este número conforme a sua experiência real) e já participei de projetos
+                        que vão desde protótipos de jogos até integrações com IA e reconhecimento facial.
                     </p>
+
+                    <h3>Objetivo e motivação</h3>
                     <p>
-                        Estou sempre em busca de novos desafios e oportunidades para crescer 
-                        profissionalmente, especialmente em projetos de desenvolvimento de jogos 
-                        que permitam explorar tanto minhas habilidades técnicas quanto artísticas.
+                        Meu objetivo é construir soluções que causem impacto — desde encontrar falhas de
+                        segurança que protejam produtos reais até desenvolver experiências digitais.
+                        Me motiva ver meu trabalho aumentar a confiança em sistemas e entregar valor.
+                    </p>
+
+                    <h3>Meu "porquê"</h3>
+                    <p>
+                        Acredito que tecnologia e criatividade, quando combinadas, geram produtos
+                        significativos. Meu porquê está em criar coisas que sejam úteis e, ao mesmo
+                        tempo, bonitas — experiências que entreguem valor técnico e estético.
+                        (Livro recomendado: "Comece pelo porquê")
+                    </p>
+
+                    <h3>Planos</h3>
+                    <p>
+                        Continuar crescendo em desenvolvimento de jogos e IA, colaborar com equipes
+                        multidisciplinares e publicar projetos que possam ser usados por outras
+                        pessoas. Estou aberto a colaboração, freelance e oportunidades de emprego.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-dark">
-  <div class="container">
-    <h2 class="section-title">Certificações & Destaques</h2>
-    <ul style="text-align:center; font-size:1.2rem; list-style:none; line-height:2;">
-      <li>🏅 Curso completo de Game Maker e Unity</li>
-      <li>🤖 Automação com N8n e Python</li>
-      <li>🧠 Projetos de IA com reconhecimento facial</li>
-    </ul>
-  </div>
-</section>
+        <!-- Seção 'Certificações & Destaques' removida conforme solicitado pelo usuário -->
 
+    <!-- Certificates section removed as requested -->
 
     <section id="skills" class="section-light">
         <div class="container">
-            <h2 class="section-title fade-in">Minhas Especialidades</h2>
+            <h2 id="title-skills" class="section-title fade-in">Minhas Especialidades</h2>
             <div class="skills-grid fade-in">
                 <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
-                    <h3>IA & Reconhecimento Facial</h3>
-                    <p>Desenvolvimento de sistemas de reconhecimento facial e integração com inteligência artificial para personalização de respostas e experiências únicas.</p>
+                    <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                    <h3>Python</h3>
+                    <p>Uso de Python para scripts, protótipos de IA, processamento de imagens e automações que se integram com N8N e APIs.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🌐</div>
+                    <div class="skill-icon"><i class="fa-solid fa-gears"></i></div>
                     <h3>N8N</h3>
-                    <p>Criação de fluxos automatizados que integram APIs, IA e scripts Python para conectar sistemas e executar tarefas de forma autônoma.</p>
+                    <p>Desenvolvo fluxos que orquestram serviços, acionam scripts Python e integram ferramentas (notificações, bancos, APIs) para automação completa.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🎮</div>
-                    <h3>Jogos</h3>
-                    <p>Desenvolvimento de protótipos de jogos e sistemas interativos, com foco em experiência do usuário e performance.</p>
+                    <div class="skill-icon"><i class="fa-solid fa-gamepad"></i></div>
+                    <h3>Unity / Jogos</h3>
+                    <p>Criação de protótipos em Unity (C#), mecânicas de jogo e integração de arte digital para experiências jogáveis e otimizadas.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>Arte Digital</h3>
-                    <p>Criação de ilustrações digitais como hobby e estudo de design. Combinação de habilidades artísticas com conhecimento técnico.</p>
+                    <div class="skill-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>UI / UX & Arte Digital</h3>
+                    <p>Design de interfaces e recursos visuais que melhoram a experiência do usuário, prototipagem de telas e assets para jogos.</p>
                 </div>
             </div>
         </div>
@@ -761,107 +853,106 @@
 
     <section id="projects" class="section-dark">
         <div class="container">
-            <h2 class="section-title fade-in">Meus Projetos</h2>
+            <h2 id="title-projects" class="section-title fade-in">Meus Projetos</h2>
             <div class="projects-grid fade-in">
+                <!-- Project 1 -->
                 <div class="project-card">
-                    <div class="project-image">🤖</div>
+                    <div class="project-image"><i class="fa-solid fa-robot"></i></div>
                     <div class="project-content">
                         <h3>Sistema de Reconhecimento Facial + IA</h3>
-                        <p>Sistema inovador que identifica rostos e conecta com inteligência artificial para personalizar respostas e criar experiências únicas para cada usuário.</p>
+                        <p>Sistema que identifica rostos e integra IA para respostas personalizadas e automações contextuais.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">OpenCV</span>
                             <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">AI Integration</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Calebe-Rocha">Ver no GitHub</a>
-                            <a href="#contact">Saber Mais</a>
+                            <a href="https://github.com/Calebe-Rocha" target="_blank">Ver GitHub</a>
+                            <a href="#contact">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- Project 2 -->
                 <div class="project-card">
-                    <div class="project-image">📱</div>
+                    <div class="project-image"><i class="fa-solid fa-list-check"></i></div>
                     <div class="project-content">
                         <h3>Task Manager App</h3>
-                        <p>Aplicação web completa para gerenciamento de tarefas com sistema de gamificação, recompensas, autenticação de usuários e interface responsiva.</p>
+                        <p>Aplicação web para gerenciamento de tarefas com gamificação e contas de usuários.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">LocalStorage</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Calebe-Rocha">Ver Código</a>
-                            <a href="#contact">Demo</a>
+                            <a href="https://github.com/Calebe-Rocha" target="_blank">Ver GitHub</a>
+                            <a href="#contact">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image">🌐</div>
+                    <div class="project-image"><i class="fa-solid fa-code"></i></div>
                     <div class="project-content">
-                        <h3>N8N</h3>
-                        <p>Criação de fluxos automatizados que integram APIs, IA e scripts Python para conectar sistemas e executar tarefas de forma autônoma.</p>
+                        <h3>N8N — Automação & Integrações</h3>
+                        <p>Desenvolvo fluxos em N8N que conectam APIs, acionam scripts em Python e automatizam processos empresariais.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">N8N</span>
+                            <span class="tech-tag">APIs</span>
+                            <span class="tech-tag">Python</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Calebe-Rocha">Ver Portfolio</a>
-                            <a href="#contact">Contratar</a>
+                            <a href="https://github.com/Calebe-Rocha" target="_blank">Ver GitHub</a>
+                            <a href="#contact">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image">🎮</div>
+                    <div class="project-image"><i class="fa-solid fa-gamepad"></i></div>
                     <div class="project-content">
                         <h3>Protótipos de Jogos</h3>
-                        <p>Desenvolvimento de protótipos de jogos experimentais, explorando mecânicas inovadoras e integrando arte digital com programação interativa.</p>
+                        <p>Protótipos em Unity com foco em jogabilidade, performance e integração artística.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Game Design</span>
                             <span class="tech-tag">Unity</span>
                             <span class="tech-tag">C#</span>
-                            <span class="tech-tag">Digital Art</span>
+                            <span class="tech-tag">Game Design</span>
                         </div>
                         <div class="project-links">
-                            <a href="#contact">Ver Demos</a>
-                            <a href="https://github.com/Calebe-Rocha">Código</a>
+                            <a href="https://github.com/Calebe-Rocha" target="_blank">Ver GitHub</a>
+                            <a href="#contact">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image">🎨</div>
+                    <div class="project-image"><i class="fa-solid fa-palette"></i></div>
                     <div class="project-content">
                         <h3>Artes Digitais</h3>
-                        <p>Coleção de ilustrações digitais criadas como hobby e estudo de design, demonstrando versatilidade artística e domínio de ferramentas digitais.</p>
+                        <p>Galeria com ilustrações e assets produzidos para jogos e projetos digitais.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Digital Art</span>
                             <span class="tech-tag">Illustration</span>
-                            <span class="tech-tag">Design</span>
-                            <span class="tech-tag">Creative</span>
+                            <span class="tech-tag">Digital Art</span>
                         </div>
                         <div class="project-links">
-                            <a href="#contact">Ver Portfolio</a>
-                            <a href="#contact">Comissões</a>
+                            <a href="https://github.com/Calebe-Rocha" target="_blank">Ver GitHub</a>
+                            <a href="#contact">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image">⚡</div>
+                    <div class="project-image"><i class="fa-solid fa-bolt"></i></div>
                     <div class="project-content">
                         <h3>Projetos Experimentais</h3>
-                        <p>Diversos projetos experimentais e estudos técnicos, sempre explorando novas tecnologias e abordagens criativas para resolver problemas complexos.</p>
+                        <p>Estudos técnicos e experimentos com novas abordagens para resolver problemas criativos.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Research</span>
-                            <span class="tech-tag">Innovation</span>
                             <span class="tech-tag">Prototyping</span>
-                            <span class="tech-tag">Creative Coding</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Calebe-Rocha">GitHub</a>
-                            <a href="#contact">Colaborar</a>
+                            <a href="https://github.com/Calebe-Rocha" target="_blank">Ver GitHub</a>
+                            <a href="#contact">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
@@ -871,44 +962,45 @@
 
     <section id="contact" class="section-light">
         <div class="container">
-            <h2 class="section-title fade-in">Vamos Criar Juntos!</h2>
-            <div class="contact-content fade-in">
-                <p class="contact-intro">
-                    Estou sempre aberto a novas oportunidades e projetos desafiadores, 
-                    especialmente em desenvolvimento de jogos. Entre em contato
-                    sobre qualquer dúvida ou para contribuir para um próximo projeto incrível!
+            <h2 id="title-contact" class="section-title fade-in">Vamos Criar Juntos!</h2>
+                <div class="contact-content fade-in">
+                <p id="contact-intro" class="contact-intro">
+                    Estou sempre aberto a novas oportunidades e projetos desafiadores — especialmente
+                    em segurança, bug bounty e desenvolvimento. Ofereço serviços de pentest,
+                    caça a vulnerabilidades e automação sob demanda. Entre em contato para escopo e
+                    orçamento.
                 </p>
                 
                 <div class="contact-grid">
-                    <a href="mailto:caleberandradep@gmail.com" class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">caleberandradep@gmail.com</span>
-                    </a>
-                    
-                    <a href="https://github.com/Calebe-Rocha" target="_blank" class="contact-item">
-                        <span class="contact-icon">💻</span>
-                        <span class="contact-label">GitHub</span>
-                        <span class="contact-value">github.com/Calebe-Rocha</span>
+                    <a id="contact-email" href="mailto:caleberandradep@gmail.com" class="contact-item">
+                        <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+                        <span id="label-email" class="contact-label">Email</span>
+                        <span id="value-email" class="contact-value">caleberandradep@gmail.com</span>
                     </a>
 
- <a href="indisponível" target="_blank" class="contact-item">
-                        <span class="contact-icon">📷</span>
-                        <span class="contact-label">Instagram indisponivel</span>
-                        <span class="contact-value">erro>
-                    </a>
-                    
- <a href="https://www.youtube.com/@CalebeDev" target="_blank" class="contact-item">
-                        <span class="contact-icon">🎥</span>
-                        <span class="contact-label">YouTube</span>
-                        <span class="contact-value">https://www.youtube.com/@CalebeDev</span>
+                    <a id="contact-github" href="https://github.com/Calebe-Rocha" target="_blank" class="contact-item">
+                        <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+                        <span id="label-github" class="contact-label">GitHub</span>
+                        <span id="value-github" class="contact-value">github.com/Calebe-Rocha</span>
                     </a>
 
-                    <div class="contact-item">
-                        <span class="contact-icon">🎮</span>
-                        <span class="contact-label">Discord</span>
-                        <span class="contact-value">caleberocha.dev</span>
-                    </div>
+                    <a id="contact-phone" href="tel:+5522998829101" class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+                        <span id="label-phone" class="contact-label">Telefone</span>
+                        <span id="value-phone" class="contact-value">(22) 99882-9101</span>
+                    </a>
+
+                    <a id="contact-youtube" href="https://www.youtube.com/@CalebeDev" target="_blank" class="contact-item">
+                        <span class="contact-icon"><i class="fa-brands fa-youtube"></i></span>
+                        <span id="label-youtube" class="contact-label">YouTube</span>
+                        <span id="value-youtube" class="contact-value">youtube.com/@CalebeDev</span>
+                    </a>
+
+                    <a id="contact-discord" href="#" class="contact-item">
+                        <span class="contact-icon"><i class="fa-brands fa-discord"></i></span>
+                        <span id="label-discord" class="contact-label">Discord</span>
+                        <span id="value-discord" class="contact-value">caleberocha.dev</span>
+                    </a>
                 </div>
                 
                 <div style="margin-top: 3rem;">
@@ -930,6 +1022,78 @@
     </footer>
 
     <script>
+        // Language switcher: translations for PT and EN
+        const translations = {
+            pt: {
+                navHome: 'Início', navAbout: 'Sobre', navSkills: 'Habilidades', navProjects: 'Projetos', navContact: 'Contato',
+                heroSubtitle: 'Bug Bounty Hunter · Desenvolvedor',
+                heroDesc: 'Encontro vulnerabilidades, construo protótipos e automatizo soluções. Ofereço serviços de bug bounty, pentest e desenvolvimento de ferramentas em Python e integrações.',
+                btnProjects: 'Ver Projetos', btnContact: 'Entre em contato',
+                titleAbout: 'Sobre Mim', titleSkills: 'Minhas Especialidades', titleProjects: 'Meus Projetos', titleContact: 'Vamos Criar Juntos!',
+                contactIntro: 'Estou disponível para trabalhos profissionais em segurança ofensiva, pentest e automação. Entre em contato para discutir escopo e orçamento.',
+                labelEmail: 'Email', labelGithub: 'GitHub', labelPhone: 'Telefone', labelYoutube: 'YouTube', labelDiscord: 'Discord',
+                footerLine1: '© 2025 Calebe - Programador & Bug Bounty Hunter', footerLine2: 'Criando soluções seguras e eficientes.'
+            },
+            en: {
+                navHome: 'Home', navAbout: 'About', navSkills: 'Skills', navProjects: 'Projects', navContact: 'Contact',
+                heroSubtitle: 'Bug Bounty Hunter · Developer',
+                heroDesc: 'I find vulnerabilities, build prototypes and automate solutions. I offer bug bounty, pentest and tooling development in Python and integrations.',
+                btnProjects: 'View Projects', btnContact: 'Get in touch',
+                titleAbout: 'About Me', titleSkills: 'My Specialties', titleProjects: 'My Projects', titleContact: 'Let’s Build Together!',
+                contactIntro: 'Available for professional engagements in offensive security, pentesting and automation. Contact me to discuss scope and budget.',
+                labelEmail: 'Email', labelGithub: 'GitHub', labelPhone: 'Phone', labelYoutube: 'YouTube', labelDiscord: 'Discord',
+                footerLine1: '© 2025 Calebe - Developer & Bug Bounty Hunter', footerLine2: 'Building secure and efficient solutions.'
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang] || translations.pt;
+            document.documentElement.lang = (lang === 'en') ? 'en' : 'pt-BR';
+            // Nav
+            document.getElementById('nav-home').textContent = t.navHome;
+            document.getElementById('nav-about').textContent = t.navAbout;
+            document.getElementById('nav-skills').textContent = t.navSkills;
+            document.getElementById('nav-projects').textContent = t.navProjects;
+            document.getElementById('nav-contact').textContent = t.navContact;
+            // Hero
+            document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
+            document.getElementById('hero-desc').textContent = t.heroDesc;
+            document.getElementById('btn-projects').textContent = t.btnProjects;
+            document.getElementById('btn-contact').textContent = t.btnContact;
+            // Section titles
+            document.getElementById('title-about').textContent = t.titleAbout;
+            document.getElementById('title-skills').textContent = t.titleSkills;
+            document.getElementById('title-projects').textContent = t.titleProjects;
+            document.getElementById('title-contact').textContent = t.titleContact;
+            // Contact
+            document.getElementById('contact-intro').textContent = t.contactIntro;
+            document.getElementById('label-email').textContent = t.labelEmail;
+            document.getElementById('label-github').textContent = t.labelGithub;
+            document.getElementById('label-phone').textContent = t.labelPhone;
+            document.getElementById('label-youtube').textContent = t.labelYoutube;
+            document.getElementById('label-discord').textContent = t.labelDiscord;
+            // Footer
+            const footerLines = document.querySelectorAll('.footer-content p');
+            if (footerLines && footerLines.length >= 1) {
+                footerLines[0].textContent = t.footerLine1;
+                if (footerLines[1]) footerLines[1].textContent = t.footerLine2;
+            }
+
+            // Update active language button styles
+            document.getElementById('lang-pt').style.opacity = (lang === 'pt') ? '1' : '0.6';
+            document.getElementById('lang-en').style.opacity = (lang === 'en') ? '1' : '0.6';
+
+            localStorage.setItem('site_lang', lang);
+        }
+
+        // Attach language buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('site_lang') || (navigator.language && navigator.language.startsWith('en') ? 'en' : 'pt');
+            document.getElementById('lang-pt').addEventListener('click', () => setLanguage('pt'));
+            document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+            setLanguage(saved);
+        });
+
         // Smooth scrolling para links de navegação
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
